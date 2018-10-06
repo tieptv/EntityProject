@@ -1,0 +1,125 @@
+﻿<Window x:Class="Sales.Account.SelectCustom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sales.Account"
+        mc:Ignorable="d"
+        Title="SelectCustom" Height="800" Width="800"
+           Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Name="customerlist">
+    <Border Height="Auto"  BorderThickness="1" BorderBrush="Black" Grid.Column="0" >
+        <Grid Height="Auto" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ListView SelectionMode="Single" Height="300" Name="lvcustomer"  Width="Auto" Margin="0,10,0,0" Grid.ColumnSpan="1" Grid.Row="4" ItemsSource="{Binding CustomerLists}" SelectedItem="{Binding CustomerObj,Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Cust ID" Width="100"   DisplayMemberBinding="{Binding CUST_ID }" />
+                        <GridViewColumn Header="Address" Width="100"   DisplayMemberBinding="{Binding ADDRESS}" />
+                        <GridViewColumn Header="City" Width="100"   DisplayMemberBinding="{Binding CITY}" />
+                        <GridViewColumn Header="Cust type cd" Width="150"   DisplayMemberBinding="{Binding CUST_TYPE_CD}" />
+                        <GridViewColumn Header="Fed ID" Width="100"   DisplayMemberBinding="{Binding FED_ID}" />
+                        <GridViewColumn Header="Postal code" Width="100"  DisplayMemberBinding="{Binding POSTAL_CODE }" />
+                        <GridViewColumn Header="State" Width="100"  DisplayMemberBinding="{Binding STATE}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="CUSTOMER" HorizontalAlignment="Center" Margin="346,10,308,39" Width="136" FontSize="20" Grid.Row="0" Grid.RowSpan="2" >
+            </Label>
+            <Grid Margin="0,10,0,0" Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label   Content="Individual" Background="Aqua" HorizontalAlignment="Left" Grid.Row="0">
+                    </Label>
+                    <Label Content="Last Name:"  Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="1"></Label>
+                    <Label Content="First Name:"  Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="2" ></Label>
+                    <Label Content="Birth Date:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="3"></Label>
+                    <TextBox Name="in_lastname" Text="{Binding In_lastname}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="1" />
+                    <TextBox Name="in_firstname" Text="{Binding In_firstname}"  IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="2" />
+                    <TextBox Name="in_birthdate" Text="{Binding In_birthdate}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0"  TextWrapping="Wrap"  Width="100" Grid.Row="3" />
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Business" FontSize="15" Background="Aqua"  HorizontalAlignment="Left" Grid.Row="0" Height="28" VerticalAlignment="Top"></Label>
+                    <Label Content="Name:"  Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="1"></Label>
+                    <Label Content="State ID:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="2"></Label>
+                    <Label Content="Incorp Date:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="3"></Label>
+                    <TextBox Name="bu_name" Text="{Binding Bu_name}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="1" />
+                    <TextBox  Name="bu_stateid" Text="{Binding Bu_stateid}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="2"  />
+                    <TextBox  Name="bu_incorpdate" Text="{Binding Bu_incorpdate}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="3" />
+                </Grid>
+
+
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Background="Aqua" Content="Officer"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Content="First Name:"  Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Content="Last Name:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="2"  Grid.Column="0"></Label>
+                <Label Content="Title:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="3"  Grid.Column="0"></Label>
+                <Label Content="Start Date:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="4"  Grid.Column="0"></Label>
+                <Label Content="End Date:" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Row="5"  Grid.Column="0"></Label>
+                <TextBox Name="of_firstname" Text="{Binding Of_firstname}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="1" Grid.Column="0" />
+                <TextBox Name="of_lastname" Text="{Binding Of_lastname}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="2" Grid.Column="0"  />
+                <TextBox  Name="of_title" Text="{Binding Of_title}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="3" Grid.Column="0"/>
+                <TextBox Name="of_startdate" Text="{Binding Of_startdate}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="4" Grid.Column="0"  />
+                <TextBox Name="of_enddate" Text="{Binding Of_enddate}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap"  Width="100" Grid.Row="5" Grid.Column="0" />
+            </Grid>
+            <Grid Grid.Row="1" Name="grCondition">
+                <TextBox Name="txtSearch" Height="31" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tìm Kiếm" Width="150" Grid.Column="0" VerticalAlignment="Center" />
+                <Button Name="Search" Content="Tìm Kiếm " HorizontalAlignment="Left" Style="{StaticResource MaterialDesignRaisedDarkButton}"  Height="29" Margin="180,10,0,0" Width="Auto" Grid.Column="1" VerticalAlignment="Center"
+                     Command="{Binding FindCommand,Mode=OneWay}" CommandParameter="{Binding ElementName=grCondition}"   />
+            </Grid>
+            <Grid  Grid.Row="5" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="170"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnInsert" Content="OK" Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0"   Height="29" Width="80"
+                          Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=lvcustomer}"/>
+                <Button Name="btnUpdate" Content="Cancel"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="1"  HorizontalAlignment="Left" Margin="90,10,0,0"     Height="29"  Width="80"
+                        Command="{Binding CancelCommand}" CommandParameter="{Binding SelectedItem,ElementName=customerlist}"/>
+               
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

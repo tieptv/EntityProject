@@ -1,0 +1,12 @@
+E:\C#\Sales\SaleModel\bin\Debug\SaleModel.dll.config
+E:\C#\Sales\SaleModel\bin\Debug\SaleModel.dll
+E:\C#\Sales\SaleModel\bin\Debug\SaleModel.pdb
+E:\C#\Sales\SaleModel\bin\Debug\EntityFramework.dll
+E:\C#\Sales\SaleModel\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#\Sales\SaleModel\bin\Debug\EntityFramework.xml
+E:\C#\Sales\SaleModel\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#\Sales\SaleModel\obj\Debug\SaleModel.Demo.resources
+E:\C#\Sales\SaleModel\obj\Debug\SaleModel.csproj.GenerateResource.Cache
+E:\C#\Sales\SaleModel\obj\Debug\SaleModel.dll
+E:\C#\Sales\SaleModel\obj\Debug\SaleModel.pdb
+E:\C#\Sales\SaleModel\obj\Debug\SaleModel.csprojResolveAssemblyReference.cache

@@ -1,0 +1,47 @@
+﻿<Window x:Class="Sales.Product_type.ProductTypeEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sales.Product_type"
+        mc:Ignorable="d"
+        Title="ProductTypeEdit" Height="300" Width="600"
+         Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Name="Product_type_edit">
+    <Border  BorderThickness="1" BorderBrush="Black">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Mã "   HorizontalAlignment="Left" Margin="120,10,0,0"  Grid.Column="0" Height="29"/>
+                <TextBox Name="txtProductTypecd" Text="{Binding Product_type_cd}"  HorizontalAlignment="Left" Margin="160,10,0,0" Width="120" Grid.Column="0" Height="29"  />
+                <Label Content="Tên"   HorizontalAlignment="Left" Margin="10,10,0,0"  Grid.Column="1" Height="29"/>
+                <TextBox Name="txtName" Text="{Binding Name}"  HorizontalAlignment="Left" Margin="60,10,0,0" Width="120" Grid.Column="1" Height="29" />
+            </Grid>
+           
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnOk" Content="OK"  Width="113" Height="29" Margin="0,10,0,0" Grid.Column="0" HorizontalAlignment="Right"
+                         Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=Product_type_edit}" />
+                <Button Name="btnCancel" Content="CANCEL"  Width="113" Height="29" Margin="10,10,0,0" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                          Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=Product_type_edit}" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

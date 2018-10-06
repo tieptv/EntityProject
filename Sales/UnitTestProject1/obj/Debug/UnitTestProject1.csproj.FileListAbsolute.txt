@@ -1,0 +1,13 @@
+E:\C#\Sales\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+E:\C#\Sales\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+E:\C#\Sales\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+E:\C#\Sales\UnitTestProject1\bin\Debug\EntityFramework.dll
+E:\C#\Sales\UnitTestProject1\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#\Sales\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\C#\Sales\UnitTestProject1\bin\Debug\SaleModel.dll
+E:\C#\Sales\UnitTestProject1\bin\Debug\SaleModel.pdb
+E:\C#\Sales\UnitTestProject1\bin\Debug\EntityFramework.xml
+E:\C#\Sales\UnitTestProject1\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#\Sales\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\C#\Sales\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+E:\C#\Sales\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

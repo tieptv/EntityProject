@@ -1,0 +1,85 @@
+﻿<Window x:Class="Sales.Acc_Tran.Acc_TranEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sales.Acc_Tran"
+        mc:Ignorable="d"
+        Title="Acc_TranEdit" Height="300" Width="600"
+         Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Border  BorderThickness="1" BorderBrush="Black">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="TXN_ID"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="0" Height="29"/>
+                <TextBox Name="txtPRODUCT_CD" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="1" Height="29" />
+                <Label Content="Số tiền"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="2" Height="29"/>
+                <TextBox Name="txtADDRESS" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="3" Height="29" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="FUNDS_AVAIL_DATE" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <Label Content="TXN_DATE"  HorizontalAlignment="Left" Margin="10,0,0,0"     Grid.Column="2"  />
+                <DatePicker Name="txtCITY" Height="23"  HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <DatePicker Name="txtCUSTYPECD" Height="23" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="TXN_TYPE_CD" HorizontalAlignment="Left"  Margin="10,0,0,0"  Grid.Column="0"/>
+                <Label Content="ACCOUNT_ID" HorizontalAlignment="Left"  Margin="10,0,0,0" Grid.Column="2"/>
+                <TextBox Name="txtFEDID" Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <TextBox Name="txtPOSTCODE" Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Chi nhánh" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <TextBox Name="txtSTATE" Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <Label Content="Nhân viên" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="2"/>
+                <TextBox  Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+                <Grid/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="OK"  Width="113" Height="29" Margin="0,10,0,0" Grid.Column="0" HorizontalAlignment="Right"/>
+                <Button Content="CANCEL"  Width="113" Height="29" Margin="10,10,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

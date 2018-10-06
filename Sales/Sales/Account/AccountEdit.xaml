@@ -1,0 +1,167 @@
+﻿<Window x:Class="Sales.Account.AccountEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sales.Account"
+        mc:Ignorable="d"
+        Title="AccountEdit" Height="450" Width="800"
+         Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        Name="Account_edit"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Border  BorderThickness="1" BorderBrush="Black">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Hóa Đơn :" Foreground="Navy" Margin="10,0,0,0" HorizontalAlignment="Left" FontSize="20"></Label>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Account ID"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="0" Height="29"/>
+                <TextBox Text="{Binding AccountViewObj.id}" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="1" Height="29" />
+                <Label Content="Avail balance"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="2" Height="29"/>
+                <TextBox Text="{Binding AccountViewObj.avail_balance}"  HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="3" Height="29" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Customer" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <Label Content="Open date"  HorizontalAlignment="Left" Margin="10,0,0,0"     Grid.Column="2"  />
+                <TextBox Name="txtcustomer" Height="23" Text="{Binding AccountViewObj.NameCus}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <DatePicker  Height="23" SelectedDate="{Binding  AccountViewObj.open_date}"  HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Pending balance" HorizontalAlignment="Left"  Margin="10,0,0,0"  Grid.Column="0"/>
+                <Label Content="Last activity date" HorizontalAlignment="Left"  Margin="10,0,0,0" Grid.Column="2"/>
+                <TextBox  Height="23" Text="{Binding AccountViewObj.pending_balance}" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <DatePicker  Height="23" SelectedDate="{Binding AccountViewObj.last_date}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Product" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <ComboBox Name="ComProduct" DisplayMemberPath="name" SelectedValuePath="name" Height="25" SelectedValue="{Binding AccountViewObj.product}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <Label Content="Open Branch" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="2"/>
+                <ComboBox Name="ComBranch" DisplayMemberPath="NAME" SelectedValuePath="NAME" Height="25" SelectedValue="{Binding AccountViewObj.branch}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+                <Grid/>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="State" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <TextBox  Height="23" Text="{Binding AccountViewObj.status}" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <Label Content="Open Employee" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="2"/>
+                <ComboBox Name="ComEm" Height="25" DisplayMemberPath="NameEm" SelectedValuePath="NameEm" SelectedValue="{Binding AccountViewObj.NameEm}"  HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Close date" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <DatePicker  Height="23" SelectedDate="{Binding AccountViewObj.close_date}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+            </Grid>
+            <Label Grid.Row="7" Content="Chi Tiết:" Foreground="Navy" Margin="10,0,0,0" HorizontalAlignment="Left" FontSize="20"></Label>
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="TXN_ID"    HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="0" Height="29"/>
+                <TextBox Text="{Binding Account_tranObj.txnid}" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="1" Height="29" />
+                <Label Content="Amount"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="2" Height="29"/>
+                <TextBox Text="{Binding Account_tranObj.amount}"  HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="3" Height="29" />
+            </Grid>
+            <Grid Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="FUNDS_AVAIL_DATE" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <Label Content="TXN_DATE"  HorizontalAlignment="Left" Margin="10,0,0,0"     Grid.Column="2"  />
+                <DatePicker Height="23" SelectedDate="{Binding Account_tranObj.fund_date}"  HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <DatePicker Height="23" SelectedDate="{Binding Account_tranObj.txndate}" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="TXN_TYPE_CD" HorizontalAlignment="Left"  Margin="10,0,0,0"  Grid.Column="0"/>
+                <Label Content="Teller Employee" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="2"/>
+                <TextBox Text="{Binding Account_tranObj.txntype}"  Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <TextBox Text="{Binding Account_tranObj.employee}"  TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Execution Branch" HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <TextBox Text="{Binding Account_tranObj.branch}" Height="23" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="1" />
+                <Grid/>
+            </Grid>
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="OK"  Width="80" Height="29" Margin="0,10,0,0" Grid.Column="0" HorizontalAlignment="Right"
+                           Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=Account_edit}" />
+                <Button Content="CANCEL"  Width="80" Height="29" Margin="10,10,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=Account_edit}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

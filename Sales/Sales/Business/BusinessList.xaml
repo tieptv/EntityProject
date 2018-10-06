@@ -1,0 +1,47 @@
+﻿<Window x:Class="Sales.Business.BusinessList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sales.Business"
+        mc:Ignorable="d"
+        Title="BusinessList" Height="300" Width="600"
+         Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Border  BorderThickness="1" BorderBrush="Black">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <DataGrid SelectionMode="Single"   AutoGenerateColumns="False" Name="grproduct"  Width="Auto" Margin="10,10,0,0" Grid.ColumnSpan="1" Grid.Row="2" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Mã KH" Binding="{Binding product_cd}" Width="Auto" />
+                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding type}" />
+                    <DataGridTextColumn Header="Tên" Binding="{Binding name}" />
+                    <DataGridTextColumn Header="Ngày hợp tác" Binding="{Binding date_offer}" Width="Auto"/>
+                  
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Kinh doanh" HorizontalAlignment="Center" Margin="30,7,0,0" Width="135" FontSize="20" Grid.Row="0" >
+            </Label>
+            <Grid Grid.Row="1" >
+                <TextBox Height="31" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tìm Kiếm" Width="250" Grid.Column="0" VerticalAlignment="Center"  />
+                <Button Content="Tìm Kiếm " HorizontalAlignment="Left" Style="{StaticResource MaterialDesignRaisedDarkButton}"  Height="29" Margin="300,15,0,0" Width="113" Grid.Column="1" VerticalAlignment="Center" />
+            </Grid>
+            <Button Content="Thêm" Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="3" HorizontalAlignment="Left" Margin="100,10,0,0"  Height="29" Width="100"  />
+            <Button Content="Sửa"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="3" HorizontalAlignment="Left"  Margin="220,10,0,0"   Height="29"   Width="100"   />
+            <Button Content="Xóa"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Row="3" HorizontalAlignment="Left"  Margin="340,10,0,0" Height="29"  Width="100"   />
+        </Grid>
+    </Border>
+</Window>

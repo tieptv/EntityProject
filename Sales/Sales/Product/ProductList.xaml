@@ -1,0 +1,58 @@
+﻿<Window x:Class="Sales.Product.ProductList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProductList" Height="Auto" Width="800"
+        Background="{DynamicResource MaterialDesignPaper}"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Name="productlist">
+
+    <Border  BorderThickness="1" BorderBrush="Black" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <ListView SelectionMode="Single" Name="lvproductview"  Width="Auto" Margin="0,0,0,0" Grid.ColumnSpan="1" Grid.Row="2" ItemsSource="{Binding ProductViewLists}" SelectedItem="{Binding ProductViewObj,Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Product CD" Width="100" DisplayMemberBinding="{Binding product_cd}" />
+                        <GridViewColumn Header="Type" Width="250" DisplayMemberBinding="{Binding type}" />
+                        <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding name}" />
+                        <GridViewColumn Header="Date Offer" Width="100" DisplayMemberBinding="{Binding date_offer}" />
+                        <GridViewColumn Header="Date Retire" Width="100" DisplayMemberBinding="{Binding date_retire}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="Product" HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="0.5,0.5" FontSize="20" Grid.Row="0" >
+            </Label>
+            <Grid Name="grCondition" Grid.Row="1" VerticalAlignment="Bottom">
+                <TextBox Name="txtSearch" Height="31" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tìm Kiếm" Width="150" Grid.Column="0" VerticalAlignment="Center" />
+                <Button Name="Search" Content="Tìm Kiếm " HorizontalAlignment="Left" Style="{StaticResource MaterialDesignRaisedDarkButton}"  Height="29" Margin="180,10,0,0" Width="Auto" Grid.Column="1" VerticalAlignment="Center"
+                     Command="{Binding FindCommand,Mode=OneWay}" CommandParameter="{Binding ElementName=grCondition}"   />
+            </Grid>
+            <Grid Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="280"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnInsert" Content="Thêm" Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0"   Height="29" Width="80"
+                          Command="{Binding NewFormCommand}" CommandParameter="{Binding ElementName=productlist}"/>
+                <Button Name="btnUpdate" Content="Sửa"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="1"  HorizontalAlignment="Left" Margin="100,10,0,0"     Height="29"  Width="80"
+                        Command="{Binding EditFormCommand}" CommandParameter="{Binding SelectedItem,ElementName=lvproductview}"/>
+                <Button Name="btnDelete" Content="Xóa"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Grid.Column="1"  HorizontalAlignment="Left" Margin="200,10,0,0"     Height="29"  Width="80"
+                          Command="{Binding  DeleteRowCommand}" CommandParameter="{Binding SelectedItem,ElementName=lvproductview}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

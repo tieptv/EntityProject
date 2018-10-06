@@ -1,0 +1,60 @@
+﻿<Window x:Class="Sales.Product.ProductEdit1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProductEdit1" Height="200" Width="600"
+        Name="Product_edit">
+    <Border  BorderThickness="1" BorderBrush="Black">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Mã sản phẩm"   HorizontalAlignment="Left" Margin="10,0,0,0"  Grid.Column="0" Height="29"/>
+                <TextBox Name="txtPRODUCT_CD"  Text="{Binding Product_cd}" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Grid.Column="1" Height="29" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Loại " HorizontalAlignment="Left" Margin="10,0,0,0"   Grid.Column="0"/>
+                <Label Content="Tên "  HorizontalAlignment="Left" Margin="10,0,0,0"     Grid.Column="2"  />
+                <ComboBox DisplayMemberPath="NAME"  SelectedValue="{Binding Type}" SelectedValuePath="NAME" Name="type" Width="120" Grid.Column="1" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                <TextBox Name="txtNAME" Height="23" Text="{Binding Name}" TextWrapping="Wrap" HorizontalAlignment="Left"  Width="120" Margin="10,0,0,0" Grid.Column="3" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Ngày cung cấp" HorizontalAlignment="Left"  Margin="10,0,0,0"  Grid.Column="0"/>
+                <Label Content="Ngày hết hạn " HorizontalAlignment="Left"  Margin="10,0,0,0" Grid.Column="2"/>
+                <DatePicker Name="date_offer" SelectedDate="{Binding Date_offer}"  Width="120" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <DatePicker Name="date_retire" SelectedDate="{Binding Date_retire}"   Width="120" Grid.Column="3" HorizontalAlignment="Left" Margin="10,0,0,0" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnOk" Content="OK"  Width="113" Height="29" Margin="0,10,0,0" Grid.Column="0" HorizontalAlignment="Right"
+                         Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=Product_edit}" />
+                <Button Name="btnCancel" Content="CANCEL"  Width="113" Height="29" Margin="10,10,0,0" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                          Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=Product_edit}" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
